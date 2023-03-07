@@ -23,6 +23,7 @@
 		05FC105A29B7892000E7400E /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC105929B7892000E7400E /* DetailTableViewController.swift */; };
 		05FC105C29B7893000E7400E /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC105B29B7893000E7400E /* DetailTableViewCell.swift */; };
 		05FC105E29B7B98600E7400E /* String + camel case to words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC105D29B7B98600E7400E /* String + camel case to words.swift */; };
+		05FC106029B7DE6F00E7400E /* Font + rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC105F29B7DE6F00E7400E /* Font + rounded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		05FC105929B7892000E7400E /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		05FC105B29B7893000E7400E /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		05FC105D29B7B98600E7400E /* String + camel case to words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + camel case to words.swift"; sourceTree = "<group>"; };
+		05FC105F29B7DE6F00E7400E /* Font + rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font + rounded.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				05BBE4B229B7739E008B8652 /* UIColor + hex.swift */,
 				05FC105D29B7B98600E7400E /* String + camel case to words.swift */,
+				05FC105F29B7DE6F00E7400E /* Font + rounded.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			files = (
 				05BBE4B629B77628008B8652 /* Constants.swift in Sources */,
 				05FC105E29B7B98600E7400E /* String + camel case to words.swift in Sources */,
+				05FC106029B7DE6F00E7400E /* Font + rounded.swift in Sources */,
 				05FC105629B77A5800E7400E /* Secrets.swift in Sources */,
 				05BBE48029B62417008B8652 /* HomeVC.swift in Sources */,
 				05FC105A29B7892000E7400E /* DetailTableViewController.swift in Sources */,

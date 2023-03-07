@@ -11,7 +11,7 @@ class DetailTableViewCell: UITableViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = .rounded(ofSize: 20, weight: .bold)
         label.textColor = AppColours.secondaryColor
         return label
     }()
@@ -19,7 +19,7 @@ class DetailTableViewCell: UITableViewCell {
     let subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = .rounded(ofSize: 16, weight: .light)
         label.textColor = .white
         return label
     }()

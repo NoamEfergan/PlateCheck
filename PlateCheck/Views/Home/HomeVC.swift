@@ -18,6 +18,7 @@ class HomeVC: UIViewController {
         )
         textField.backgroundColor = AppColours.secondaryColor
         textField.textColor = .white
+        textField.font = .rounded(ofSize: 16, weight: .ultraLight)
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -26,6 +27,7 @@ class HomeVC: UIViewController {
     private lazy var submitButton: UIButton = {
         let button = UIButton()
         button.setTitle("Submit", for: .normal)
+        button.titleLabel?.font = .rounded(ofSize: 16, weight: .light)
         button.configuration = .filled()
         button.configuration?.baseBackgroundColor = AppColours.mainColor
         button.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
