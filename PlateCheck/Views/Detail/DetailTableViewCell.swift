@@ -12,7 +12,7 @@ class DetailTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.textColor = .label
+        label.textColor = AppColours.secondaryColor
         return label
     }()
 
@@ -20,13 +20,14 @@ class DetailTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = .secondaryLabel
+        label.textColor = .white
         return label
     }()
 
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.backgroundColor = AppColours.mainColor
         stackView.axis = .vertical
         stackView.spacing = 4
         return stackView
@@ -35,6 +36,7 @@ class DetailTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(stackView)
+        contentView.backgroundColor = AppColours.mainColor
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(subtitleLabel)
         NSLayoutConstraint.activate([

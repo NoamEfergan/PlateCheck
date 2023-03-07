@@ -14,17 +14,18 @@ final class NetworkService {
                              responseType _: T.Type,
                              requestType: HTTPMethods,
                              body: [String: String]? = nil) async throws
-        -> T {
+        -> T
+    {
         guard let url: URL = .init(string: Networking.baseURL + path.rawValue) else {
             throw NetworkError.invalidURL
         }
         let session = URLSession.shared
         var request = URLRequest(url: url)
         request.httpMethod = requestType.rawValue
-            request.allHTTPHeaderFields = [
-                "Content-Type": "application/json",
-                "x-api-key": Secrets.APIKey
-            ]
+        request.allHTTPHeaderFields = [
+            "Content-Type": "application/json",
+            "x-api-key": Secrets.APIKey,
+        ]
         if let body {
             let encoded = try JSONEncoder().encode(body)
             request.httpBody = encoded

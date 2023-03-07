@@ -8,15 +8,19 @@
 import UIKit
 
 class DetailTableViewController: UITableViewController {
+    typealias DisplayableData = (title: String, subtitle: String)
     private var dvlaResponse: DVLAResponse
-    private var items: [Mirror.Child]
+    private var displayableItems: [DisplayableData]
     init(response: DVLAResponse) {
-        self.dvlaResponse = response
-        self.items = Array(Mirror(reflecting: dvlaResponse).children)
-        super.init(style: .plain)
+        dvlaResponse = response
+        let items = Array(Mirror(reflecting: dvlaResponse).children)
+        displayableItems = []
+        super.init(style: .insetGrouped)
+        displayableItems = items.compactMap { getDisplayableData(from: $0) }
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -24,16 +28,27 @@ class DetailTableViewController: UITableViewController {
         super.viewDidLoad()
         title = dvlaResponse.registrationNumber
         tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: "cell")
+        view.backgroundColor = AppColours.background
+        navigationController?.navigationBar.barTintColor = AppColours.background
+        navigationController?.navigationBar.tintColor = AppColours.secondaryColor
+    }
+
+    func getDisplayableData(from item: Mirror.Child) -> DisplayableData? {
+        guard let title = item.label?.camelCaseToWords().capitalized, let subtitle = item.value as? String
+        else {
+            return nil
+        }
+        return (title: title, subtitle: subtitle)
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        1
+    override func numberOfSections(in _: UITableView) -> Int {
+        displayableItems.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,13 +56,13 @@ class DetailTableViewController: UITableViewController {
         else {
             return DetailTableViewCell()
         }
-        let item = items[indexPath.row]
-        if let title = item.label?.camelCaseToWords().capitalized {
-            
-        } else {
-            tableView.removeCell
-        }
-        cell.setupCell(with: (item.label?.camelCaseToWords().capitalized), and: item.value as! String)
+        let item = displayableItems[indexPath.section]
+        cell.setupCell(with: item.title, and: item.subtitle)
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+        
 }

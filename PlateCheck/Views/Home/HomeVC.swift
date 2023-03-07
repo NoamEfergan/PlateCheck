@@ -36,7 +36,6 @@ class HomeVC: UIViewController {
     let loadingAlert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
     let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
 
-
     // MARK: - Variables
 
     let networkService = NetworkService()
@@ -71,7 +70,7 @@ class HomeVC: UIViewController {
     private func setupAlertView() {
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = .medium
-        loadingIndicator.startAnimating();
+        loadingIndicator.startAnimating()
 
         loadingAlert.view.addSubview(loadingIndicator)
     }
@@ -94,7 +93,6 @@ class HomeVC: UIViewController {
                     requestType: .POST,
                     body: ["registrationNumber": plateNumber]
                 )
-                print(response)
                 self.loadingAlert.dismiss(animated: true) {
                     self.navigationController?.pushViewController(
                         DetailTableViewController(response: response),
@@ -106,12 +104,10 @@ class HomeVC: UIViewController {
                     if let networkError = error as? NetworkService.NetworkError {
                         self.presentNetworkError(networkError)
                     } else {
-                        
                         self.presetError(
                             title: "Whoops!",
                             body: "Something went wrong,sorry about that. let's try again!"
                         )
-                        
                     }
                     print("Failed to car from reg with error: \(error.localizedDescription)")
                 }
