@@ -37,7 +37,13 @@ final class NetworkService {
         case 200 ... 299:
             let decoded = try JSONDecoder().decode(T.self, from: data)
             return decoded
-        case 400 ... 499:
+        case 400:
+            throw NetworkError.invalidInput
+        case 429:
+            throw NetworkError.tooMany
+        case 401 ... 428:
+            throw NetworkError.clientError
+        case 430 ... 499:
             throw NetworkError.clientError
         case 500 ... 600:
             throw NetworkError.serverError
@@ -56,6 +62,8 @@ extension NetworkService {
         case serverError
         case clientError
         case unknownError
+        case invalidInput
+        case tooMany
     }
 }
 

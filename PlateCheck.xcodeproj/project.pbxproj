@@ -20,6 +20,9 @@
 		05BBE4B929B77800008B8652 /* DVLAResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBE4B829B77800008B8652 /* DVLAResponse.swift */; };
 		05FC105429B77A1500E7400E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC105329B77A1500E7400E /* NetworkService.swift */; };
 		05FC105629B77A5800E7400E /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC105529B77A5800E7400E /* Secrets.swift */; };
+		05FC105A29B7892000E7400E /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC105929B7892000E7400E /* DetailTableViewController.swift */; };
+		05FC105C29B7893000E7400E /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC105B29B7893000E7400E /* DetailTableViewCell.swift */; };
+		05FC105E29B7B98600E7400E /* String + camel case to words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC105D29B7B98600E7400E /* String + camel case to words.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		05BBE4B829B77800008B8652 /* DVLAResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVLAResponse.swift; sourceTree = "<group>"; };
 		05FC105329B77A1500E7400E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		05FC105529B77A5800E7400E /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		05FC105929B7892000E7400E /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		05FC105B29B7893000E7400E /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		05FC105D29B7B98600E7400E /* String + camel case to words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + camel case to words.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				05BBE4B229B7739E008B8652 /* UIColor + hex.swift */,
+				05FC105D29B7B98600E7400E /* String + camel case to words.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,7 +165,8 @@
 		05BBE4B729B777A6008B8652 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				05BBE47F29B62417008B8652 /* HomeVC.swift */,
+				05FC105829B7890B00E7400E /* Detail */,
+				05FC105729B788FD00E7400E /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +177,23 @@
 				05FC105329B77A1500E7400E /* NetworkService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		05FC105729B788FD00E7400E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				05BBE47F29B62417008B8652 /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		05FC105829B7890B00E7400E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				05FC105929B7892000E7400E /* DetailTableViewController.swift */,
+				05FC105B29B7893000E7400E /* DetailTableViewCell.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,12 +327,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				05BBE4B629B77628008B8652 /* Constants.swift in Sources */,
+				05FC105E29B7B98600E7400E /* String + camel case to words.swift in Sources */,
 				05FC105629B77A5800E7400E /* Secrets.swift in Sources */,
 				05BBE48029B62417008B8652 /* HomeVC.swift in Sources */,
+				05FC105A29B7892000E7400E /* DetailTableViewController.swift in Sources */,
 				05BBE47C29B62417008B8652 /* AppDelegate.swift in Sources */,
 				05BBE47E29B62417008B8652 /* SceneDelegate.swift in Sources */,
 				05BBE4B329B7739E008B8652 /* UIColor + hex.swift in Sources */,
 				05BBE4B929B77800008B8652 /* DVLAResponse.swift in Sources */,
+				05FC105C29B7893000E7400E /* DetailTableViewCell.swift in Sources */,
 				05FC105429B77A1500E7400E /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

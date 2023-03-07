@@ -78,6 +78,8 @@ class HomeVC: UIViewController {
 
     @objc private func submitButtonTapped() {
         present(loadingAlert, animated: true)
+        #warning("remove before pushing")
+        plateTextField.text = "AA19AAA"
         guard let plateNumber = plateTextField.text, !plateNumber.isEmpty else {
             loadingAlert.dismiss(animated: true) {
                 self.presetError(title: "No reg", body: "If you don't give us a plate, how can we check it?")
@@ -85,11 +87,6 @@ class HomeVC: UIViewController {
             return
         }
         Task {
-            defer {
-                DispatchQueue.main.async {
-                    self.loadingAlert.dismiss(animated: true)
-                }
-            }
             do {
                 let response = try await networkService.perform(
                     path: .vehicles,
@@ -98,15 +95,53 @@ class HomeVC: UIViewController {
                     body: ["registrationNumber": plateNumber]
                 )
                 print(response)
+                self.loadingAlert.dismiss(animated: true) {
+                    self.navigationController?.pushViewController(
+                        DetailTableViewController(response: response),
+                        animated: true
+                    )
+                }
             } catch {
-                print("Failed to car from reg with error: \(error.localizedDescription)")
+                self.loadingAlert.dismiss(animated: true) {
+                    if let networkError = error as? NetworkService.NetworkError {
+                        self.presentNetworkError(networkError)
+                    } else {
+                        
+                        self.presetError(
+                            title: "Whoops!",
+                            body: "Something went wrong,sorry about that. let's try again!"
+                        )
+                        
+                    }
+                    print("Failed to car from reg with error: \(error.localizedDescription)")
+                }
             }
         }
     }
-    
+
+    private func presentNetworkError(_ error: NetworkService.NetworkError) {
+        let title: String
+        let body: String
+        switch error {
+        case .invalidInput:
+            title = "Invalid input"
+            body = "The registration plate number that you've entered seems to be invalid."
+        case .tooMany:
+            title = "Too many requests"
+            body = "You're making too many requests. please wait before trying again."
+        case .serverError:
+            title = "Server error"
+            body = "the DVLA server seems to be down. please try again later."
+        default:
+            title = "Whoops!"
+            body = "Something went wrong,sorry about that. let's try again!"
+        }
+        presetError(title: title, body: body)
+    }
+
     private func presetError(title: String, body: String) {
         let alert = UIAlertController(title: title, message: body, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-        self.present(alert, animated: true)
+        present(alert, animated: true)
     }
 }
