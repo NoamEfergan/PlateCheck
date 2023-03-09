@@ -7,7 +7,35 @@
 		<key>PlateCheck.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>PlateCheckTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>PlateCheckUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>05BBE47729B62417008B8652</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>05BBE48D29B62419008B8652</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>05BBE49729B62419008B8652</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

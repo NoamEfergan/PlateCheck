@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0589E68D29B92208000638AC /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589E68C29B92208000638AC /* SnapshotHelper.swift */; };
+		0589E68F29B924B2000638AC /* UITextField + AddDoneButto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589E68E29B924B2000638AC /* UITextField + AddDoneButto.swift */; };
 		05BBE47C29B62417008B8652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBE47B29B62417008B8652 /* AppDelegate.swift */; };
 		05BBE47E29B62417008B8652 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBE47D29B62417008B8652 /* SceneDelegate.swift */; };
 		05BBE48029B62417008B8652 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBE47F29B62417008B8652 /* HomeVC.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0589E68C29B92208000638AC /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		0589E68E29B924B2000638AC /* UITextField + AddDoneButto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + AddDoneButto.swift"; sourceTree = "<group>"; };
 		05BBE47829B62417008B8652 /* PlateCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlateCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BBE47B29B62417008B8652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BBE47D29B62417008B8652 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		05BBE49B29B62419008B8652 /* PlateCheckUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0589E68C29B92208000638AC /* SnapshotHelper.swift */,
 				05BBE49C29B62419008B8652 /* PlateCheckUITests.swift */,
 				05BBE49E29B62419008B8652 /* PlateCheckUITestsLaunchTests.swift */,
 			);
@@ -151,6 +156,7 @@
 				05BBE4B229B7739E008B8652 /* UIColor + hex.swift */,
 				05FC105D29B7B98600E7400E /* String + camel case to words.swift */,
 				05FC105F29B7DE6F00E7400E /* Font + rounded.swift */,
+				0589E68E29B924B2000638AC /* UITextField + AddDoneButto.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0589E68F29B924B2000638AC /* UITextField + AddDoneButto.swift in Sources */,
 				05BBE4B629B77628008B8652 /* Constants.swift in Sources */,
 				05FC105E29B7B98600E7400E /* String + camel case to words.swift in Sources */,
 				05FC106029B7DE6F00E7400E /* Font + rounded.swift in Sources */,
@@ -358,6 +365,7 @@
 			files = (
 				05BBE49F29B62419008B8652 /* PlateCheckUITestsLaunchTests.swift in Sources */,
 				05BBE49D29B62419008B8652 /* PlateCheckUITests.swift in Sources */,
+				0589E68D29B92208000638AC /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,20 +517,25 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7N5G6M4FZA;
+				DEVELOPMENT_TEAM = 4J7W4CYA5S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PlateCheck/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PlateCheck;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = NoamEfergan.PlateCheck;
+				PRODUCT_BUNDLE_IDENTIFIER = "NoamEfergan.Plate-Check";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,20 +549,25 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7N5G6M4FZA;
+				DEVELOPMENT_TEAM = 4J7W4CYA5S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PlateCheck/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PlateCheck;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = NoamEfergan.PlateCheck;
+				PRODUCT_BUNDLE_IDENTIFIER = "NoamEfergan.Plate-Check";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

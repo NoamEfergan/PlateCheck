@@ -20,6 +20,9 @@ class HomeVC: UIViewController {
         textField.textColor = .white
         textField.font = .rounded(ofSize: 16, weight: .ultraLight)
         textField.borderStyle = .roundedRect
+        textField.autocapitalizationType = .allCharacters
+        textField.autocorrectionType = .no
+        textField.addDoneButtonOnKeyboard()
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -79,8 +82,8 @@ class HomeVC: UIViewController {
 
     @objc private func submitButtonTapped() {
         present(loadingAlert, animated: true)
-        #warning("remove before pushing")
-        plateTextField.text = "AA19AAA"
+//        #warning("remove before pushing")
+//        plateTextField.text = "AA19AAA"
         guard let plateNumber = plateTextField.text, !plateNumber.isEmpty else {
             loadingAlert.dismiss(animated: true) {
                 self.presetError(title: "No reg", body: "If you don't give us a plate, how can we check it?")
